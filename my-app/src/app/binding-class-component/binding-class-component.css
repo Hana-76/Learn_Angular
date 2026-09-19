@@ -1,0 +1,17 @@
+.btn{
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: lightgray;
+    transition: all 0.3s ease;
+}
+.btn-active{
+    background-color: white;
+    border-color: red;
+}
+.btn-saved {
+    background-color: green;
+    border-color: darkgreen;
+    color: white;
+}
