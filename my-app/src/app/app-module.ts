@@ -9,6 +9,10 @@ import { BindingEVentComponent } from './binding-event-component/binding-event-c
 import { ProductService } from './product-service/product-service';
 import { ServiceProductImageEventComponent } from './service-product-image-event.component/service-product-image-event.component';
 import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail.component/service-product-image-event-detail.component';
+// import { CatalogService } from './catalog-service/catalog-service';
+// import { ProductCatalogComponent } from './product-catalog/product-catalog';
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +21,12 @@ import { ServiceProductImageEventDetailComponent } from './service-product-image
     BindingClassComponent,
     BindingStyleComponent,
     BindingEVentComponent,
-    ProductService,
     ServiceProductImageEventComponent,
     ServiceProductImageEventDetailComponent,
-  ],
+    ProductService
+],
   imports: [BrowserModule, AppRoutingModule],
-  providers: [provideBrowserGlobalErrorListeners()],
+  providers: [provideBrowserGlobalErrorListeners(), ProductService],
   bootstrap: [App],
 })
 export class AppModule {}

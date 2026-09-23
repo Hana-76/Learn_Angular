@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product-service/product-service';
+
 @Component({
   selector: 'app-service-product-image-event-detail.component',
   standalone: false,
@@ -8,22 +9,25 @@ import { ProductService } from '../product-service/product-service';
   templateUrl: './service-product-image-event-detail.component.html',
 })
 export class ServiceProductImageEventDetailComponent {
-  selectedProduct:any
-  constructor(private activateRoute:ActivatedRoute,private _fs:ProductService, 
-private router:Router) 
-  { 
-    activateRoute.paramMap.subscribe( 
-      (param)=>{ 
-        let id=param.get('id') 
-         
-        if(id!=null) 
-        { 
-          this.selectedProduct=_fs.getProductDetail(id)           
-        } 
-      } 
-    ) 
-  } 
-  goBack(){ 
-    this.router.navigate(['service-product-image-event']) 
-  } 
+  selectedProduct: any;
+
+  constructor(
+    private activateRoute: ActivatedRoute,
+    private _fs: ProductService,
+    private router: Router
+  ) {
+    activateRoute.paramMap.subscribe(
+      (param) => {
+        let id = param.get('id');
+        if (id != null) {
+          this.selectedProduct = _fs.getProductDetail(id);
+        }
+      }
+    );
+  }
+
+  goBack() {
+    this.router.navigate(['service-product-image-event']);
+  }
 }
+
