@@ -1,0 +1,39 @@
+<p>catalog works!</p>
+<h2>Danh mục và Sản phẩm</h2>
+
+<div *ngFor="let cate of categories" style="margin-bottom: 20px;">
+  <!-- Bảng hiển thị thông tin Danh mục -->
+  <table border="1" width="100%" style="border-collapse: collapse; margin-bottom: 5px; background-color: #f2f2f2;">
+    <tr>
+      <th width="30%">Ma Danh Muc</th>
+      <th width="70%">Ten Danh Muc</th>
+    </tr>
+    <tr>
+      <td align="center">{{ cate.Cateid }}</td>
+      <td>{{ cate.CateName }}</td>
+    </tr>
+  </table>
+
+  <!-- Bảng hiển thị danh sách Sản phẩm thuộc Danh mục đó -->
+  <table border="1" width="100%" style="border-collapse: collapse;">
+    <thead>
+      <tr style="background-color: #e6f2ff;">
+        <th>Ma San Pham</th>
+        <th>Ten San Pham</th>
+        <th>Gia San Pham</th>
+        <th>Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Vòng lặp ngFor lồng để duyệt mảng Products của từng category -->
+      <tr *ngFor="let p of cate.Products">
+        <td align="center">{{ p.ProductId }}</td>
+        <td>{{ p.ProductName }}</td>
+        <td align="right">{{ p.Price }}</td>
+        <td align="center">
+          <img [src]="p.Image" width="50" height="50" alt="{{ p.ProductName }}">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
