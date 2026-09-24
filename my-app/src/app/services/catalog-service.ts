@@ -6,7 +6,7 @@ export class CatalogService {
     {"Cateid":"cate1","CateName":"nuoc ngot", 
       "Products":[ 
         {"ProductId":"p1","ProductName":"Coca","Price":100, 
-"Image":"my-app\src\app\assets\h1.png.webp"}, 
+"Image":"assets/h1.png"}, 
         {"ProductId":"p2","ProductName":"Pepsi","Price":300, 
 "Image":"assets/h2.png"}, 
         {"ProductId":"p3","ProductName":"Sting","Price":200, 
