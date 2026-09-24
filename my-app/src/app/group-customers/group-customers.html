@@ -1,0 +1,33 @@
+<h3>Danh Sách Khách Hàng Theo Nhóm</h3>
+
+<p *ngIf="errMessage" style="color: red; font-weight: bold;">{{ errMessage }}</p>
+
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 90%;">
+  <thead>
+    <tr style="background-color: #f0f0f0;">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Avatar</th>
+    </tr>
+  </thead>
+  
+  <tbody *ngFor="let group of customerGroups">
+    <tr style="background-color: #d1e7dd; font-weight: bold;">
+      <td colspan="5">
+        {{ group.CustomerTypeId }} - {{ group.CustomterTypeName }}
+      </td>
+    </tr>
+
+    <tr *ngFor="let c of group.Customers">
+      <td>{{ c.Id }}</td>
+      <td>{{ c.Name }}</td>
+      <td>{{ c.Email }}</td>
+      <td>{{ c.Age }}</td>
+      <td>
+        <img [src]="c.Image" width="40" height="40" alt="avatar" />
+      </td>
+    </tr>
+  </tbody>
+</table>

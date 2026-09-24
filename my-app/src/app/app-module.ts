@@ -10,6 +10,8 @@ import { ProductService } from './product-service/product-service';
 import { ServiceProductImageEventComponent } from './service-product-image-event.component/service-product-image-event.component';
 import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail.component/service-product-image-event-detail.component';
 import { CatalogComponent } from './catalog/catalog';
+import { GroupCustomers } from './group-customers/group-customers';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,9 @@ import { CatalogComponent } from './catalog/catalog';
     ServiceProductImageEventDetailComponent,
     ProductService,
     CatalogComponent,
+    GroupCustomers,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideBrowserGlobalErrorListeners(), ProductService],
   bootstrap: [App],
 })
